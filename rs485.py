@@ -14,11 +14,11 @@ def getPort():
         if "USB" in strPort:
             splitPort = strPort.split(" ")
             commPort = (splitPort[0])
-    return commPort
+    return "COM4"
     # return "/dev/ttyUSB1"
 
 
-portName = "/dev/ttyUSB0"
+portName = "COM4"
 print(portName)
 
 
@@ -52,8 +52,6 @@ soil_moisture = [1, 3, 0, 7, 0, 1, 53, 203]
 
 def readMoisture():
     serial_read_data(ser)
-    ser.write(soil_moisture)
-    time.sleep(1)
     return serial_read_data(ser)
 
 
@@ -85,7 +83,9 @@ def setDevice1(state):
 
 while True:
     print("Test SENSOR: ")
-    setDevice1(True)
-    time.sleep(2)
-    setDevice1(False)
-    time.sleep(2)
+    # setDevice1(True)
+    # time.sleep(2)
+    # setDevice1(False)
+    # time.sleep(2)
+    print(readTemperature())
+    time.sleep(3)
